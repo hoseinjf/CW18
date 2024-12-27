@@ -1,6 +1,7 @@
 ﻿using App.Domain.Core.CW18.Users.Entities;
 using AppDomainCore.CW18.Users.Services;
 using Quiz2.Entity;
+using Quiz2.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,13 @@
 ﻿
-CardServise cardServise = new CardServise();
-TransactionServise transaction = new TransactionServise();
-UserServise userServise = new UserServise();
+using AppDomainAppService.CW18.Cards;
+using AppDomainAppService.CW18.Transactions;
+using AppDomainAppService.CW18.Users;
+using AppDomainCore.CW18.Cards.Entities;
+using Quiz2.Entity;
+
+CardService cardServise = new CardService();
+TransactionService transaction = new TransactionService();
+UserService userServise = new UserService();
 bool isRun = true;
 bool isRun2 = true;
 bool isRun3 = true;
