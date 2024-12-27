@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CW18\BaseData\" />
+    <Folder Include="CW18\Cards\Enums\" />
+    <Folder Include="CW18\Transactions\Enums\" />
+    <Folder Include="CW18\Users\Enums\" />
+  </ItemGroup>
+
+</Project>
