@@ -1,44 +1,54 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVC.Endpoint</title>
+    <title>@ViewData["Title"] - مکتب بانک</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVC.Endpoint.styles.css" asp-append-version="true" />
+    <style>
+        a:hover{
+            background-color:forestgreen;
+            color:aliceblue!important;
+            border-radius:10px;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC.Endpoint</a>
+<body class="vw-100 h-100 bg-dark" style="color:aliceblue!important;">
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="color:aliceblue!important;">
+            <div class="container-fluid" style="color:aliceblue!important;">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight:700;color:aliceblue!important;">مکتب بانک</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div style="color:aliceblue!important;" class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" style="color:aliceblue!important;" asp-action="Index">خانه &nbsp; |</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="LoginGet" style="font-weight:700;color:aliceblue!important;">ورود به اینترنت بانک &nbsp; |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" style="color:aliceblue!important;" asp-action="Privacy">قوانین و مقررات &nbsp; |</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container" style="padding:0px!important;margin:0px!important" >
+        <main role="main"  class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - MVC.Endpoint - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top bg-dark footer text-muted ">
+        <div class="container bg-dark" style="text-align:center; align-items:center;color:aliceblue!important; ">
+            &copy; 2024 - مکتب بانک - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

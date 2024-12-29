@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "_User";
+}
+
+<div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form  asp-action="Login">
+        <h3>فرم ورود</h3>
+
+        <label name="username" for="username">نام کاربری</label>
+        <input type="text" name="username" placeholder="username" id="username">
+
+        <label for="password">رمز عبور</label>
+        <input name="password" type="password" placeholder="Password" id="password">
+        <input value="ورود" class="btn btn-success" id="bin" name="login" type="submit">
+    </form>
+</div>
+
+

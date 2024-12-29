@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "_User";
+}
+
+<head>
+    <style>
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+
+        }
+
+        form {
+            height: 720px;
+            width: 400px;
+            background-color: rgba(255,255,255,0.13);
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            padding: 50px 35px;
+            margin-top: 100px
+        }
+    </style>
+</head>
+<div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form  asp-action="Register">
+        <h3>فرم ثبت نام</h3>
+
+        <label name="FirstName" for="FirstName">نام </label>
+        <input type="text" name="FirstName" placeholder="FirstName" id="FirstName">
+
+        <label name="LastName" for="LastName">نام خانوادگی</label>
+        <input type="text" name="LastName" placeholder="LastName" id="LastName">
+
+        <label name="Username" for="Username">نام کاربری</label>
+        <input type="text" name="Username" placeholder="Username" id="Username">
+
+        <label for="Password">رمز عبور</label>
+        <input name="Password" type="Password" placeholder="Password" id="Password">
+
+        <input value="ثبت نام" class="btn btn-success" id="bin" name="Register" type="submit">
+    </form>
+</div>

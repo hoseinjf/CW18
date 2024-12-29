@@ -18,4 +18,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\App.Infra.Data.Repos.Ef\App.Infra.Data.Repos.Ef.csproj" />
+    <ProjectReference Include="..\AppDomainAppService\AppDomainAppService.csproj" />
+    <ProjectReference Include="..\AppDomainCore\AppDomainCore.csproj" />
+  </ItemGroup>
+
 </Project>

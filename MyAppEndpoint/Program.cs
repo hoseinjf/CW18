@@ -1,5 +1,4 @@
-﻿using App.Infra.Data.Repos.Ef.CW18.OnUsers;
-using AppDomainAppService.CW18.Cards;
+﻿using AppDomainAppService.CW18.Cards;
 using AppDomainAppService.CW18.Transactions;
 using AppDomainAppService.CW18.Users;
 using AppDomainCore.CW18.Cards.Contract.AppServices;
@@ -10,6 +9,7 @@ using AppDomainCore.CW18.Users.Entities;
 using AppDomainService.CW18.Cards;
 using AppDomainService.CW18.Transactions;
 using AppDomainService.CW18.Users;
+using Quiz2.Entity;
 
 ICardAppService cardServise = new CardAppService();
 ITransactionAppService transaction = new TransactionAppService();

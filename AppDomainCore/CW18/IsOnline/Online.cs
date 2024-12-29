@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Infra.Data.Repos.Ef.CW18.OnUsers
+namespace Quiz2.Entity
 {
     public static class Online
     {
