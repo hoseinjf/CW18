@@ -43,12 +43,12 @@ namespace AppDomainAppService.CW18.Cards
             var login = cardService.Login(username, cardNumber, password);
             if (login != null)
             {
-                Console.WriteLine("welcom");
+
                 return login;
             }
             else
             {
-                Console.WriteLine("card number or password is not true");
+
                 return null;
             }
         }

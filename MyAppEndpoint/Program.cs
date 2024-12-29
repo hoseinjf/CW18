@@ -157,7 +157,13 @@ do
                                                         Console.Clear();
                                                         foreach (var item in transaction.GetTransactions(onCard.CardNumber))
                                                         {
-                                                            Console.WriteLine(item);
+                                                            Console.WriteLine
+                                                                ($"Source Card Number: {item.SourceCard.CardNumber}" +$" -- " +
+                                                                 $"Destination Card Number: {item.DestinationCard.CardNumber} -- " +
+                                                                 $"Transaction Date: {item.TransactionDate} -- " +
+                                                                 $"Amount: {item.Amount} -- " +
+                                                                 $"Successful: {item.isSuccessful}"
+                                                                 );
                                                         }
                                                         Console.ReadKey();
                                                         break;

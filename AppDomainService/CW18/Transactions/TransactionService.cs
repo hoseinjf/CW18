@@ -45,12 +45,11 @@ namespace AppDomainService.CW18.Transactions
 
             foreach (var item in ac)
             {
-                Console.WriteLine($"Source Card Number: {item.SourceCard.CardNumber} -- " +
+               string res = $"Source Card Number: {item.SourceCard.CardNumber} -- " +
                     $"Destination Card Number: {item.DestinationCard.CardNumber} -- " +
                     $"Transaction Date: {item.TransactionDate} -- " +
                     $"Amount: {item.Amount} -- " +
-                    $"Successful: {item.isSuccessful}");
-                Console.WriteLine("-------------------------------------------------------");
+                    $"Successful: {item.isSuccessful}";
             }
             return ac;
         }
