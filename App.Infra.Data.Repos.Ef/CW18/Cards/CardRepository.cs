@@ -23,6 +23,7 @@ namespace App.Infra.Data.Repos.Ef.CW18.Cards
         {
             Card card2 = new Card()
             {
+
                 CardNumber = card.CardNumber,
                 Balance = card.Balance,
                 Password = card.Password,

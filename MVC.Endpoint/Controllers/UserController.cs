@@ -26,10 +26,13 @@ namespace MVC.Endpoint.Controllers
             {
                 Online.user = new User()
                 {
-                    Username = username,
-                    Password = password
+                    Id = log.Id,
+                    LastName =log.LastName,
+                    FirstName =log.FirstName,
+                    Username = log.Username,
+                    Password = log.Password,
                 };
-                return RedirectToAction("index", "RootUser");
+                return RedirectToAction("index", "Card");
             }
             else
             {

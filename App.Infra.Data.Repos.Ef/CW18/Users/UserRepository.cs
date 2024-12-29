@@ -31,6 +31,7 @@ namespace App.Infra.Data.Repos.Ef.CW18.Users
         {
             User user1 = new User()
             {
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.Username,

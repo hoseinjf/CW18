@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_User";
+}
+
+<head>
+    <style>
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        form {
+            height: 720px;
+            width: 400px;
+            background-color: rgba(255,255,255,0.13);
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            padding: 50px 35px;
+            margin-top: 100px
+        }
+    </style>
+</head>
+<div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form asp-action="RegisterCard">
+        <h3>فرم ثبت کارت جدید</h3>
+
+        <label name="CardNumber" for="CardNumber">شماره کارت </label>
+        <input type="text" name="CardNumber" placeholder="CardNumber" id="CardNumber">
+
+        <label name="Balance" for="Balance">مبلغ موجودی</label>
+        <input type="text" name="Balance" placeholder="Balance" id="Balance">
+
+        <label for="Password">رمز عبور</label>
+        <input name="Password" type="Password" placeholder="Password" id="Password">
+
+        <input value="ثبت نام" class="btn btn-success" id="bin" name="Register" type="submit">
+    </form>
+</div>
