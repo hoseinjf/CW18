@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppDomainCore.CW18.Cards.Entities;
 
-namespace Quiz2.Entity
+namespace AppDomainCore.CW18.Users.Entities
 {
     public class User
     {

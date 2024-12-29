@@ -1,5 +1,5 @@
 ﻿using AppDomainCore.CW18.Transactions.Entities;
-using Quiz2.Entity;
+using AppDomainCore.CW18.Users.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

@@ -1,18 +1,17 @@
-﻿using AppDomainCore.CW18.Cards.Entities;
-using AppDomainCore.CW18.Cards.Services;
-using Quiz2.Context;
-using Quiz2.Continer;
+﻿using App.Infra.Data.Repos.Ef.CW18.Db;
+using AppDomainCore.CW18.Cards.Contract.Repositories;
+using AppDomainCore.CW18.Cards.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppDomainAppService.CW18.Cards
+namespace App.Infra.Data.Repos.Ef.CW18.Cards
 {
     public class CardRepository : ICardRepository
     {
-        string file = ("C:\\Users\\MOHO\\source\\repos\\Quiz2\\Quiz2\\File\\randCode.txt");
+        string file = "C:\\Users\\MOHO\\source\\repos\\Quiz2\\Quiz2\\File\\randCode.txt";
 
         private readonly AppDbContext appDbContext;
         public CardRepository()
@@ -62,12 +61,12 @@ namespace AppDomainAppService.CW18.Cards
             {
                 if (Amount > 1000)
                 {
-                    tax = (Amount * 1.5f) / 100;
+                    tax = Amount * 1.5f / 100;
                     return Amount -= tax;
                 }
                 else if (Amount <= 1000)
                 {
-                    tax = (Amount * 0.5f) / 100;
+                    tax = Amount * 0.5f / 100;
                     return Amount -= tax;
                 }
             }

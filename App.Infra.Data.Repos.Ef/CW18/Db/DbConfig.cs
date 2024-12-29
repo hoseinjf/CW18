@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Config
+namespace App.Infra.Data.Repos.Ef.CW18.Db
 {
     public static class DbConfig
     {

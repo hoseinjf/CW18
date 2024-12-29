@@ -1,11 +1,12 @@
 ﻿using AppDomainCore.CW18.Cards.Entities;
+using AppDomainCore.CW18.Users.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Entity
+namespace App.Infra.Data.Repos.Ef.CW18.OnUsers
 {
     public static class Online
     {

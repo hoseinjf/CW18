@@ -1,4 +1,9 @@
-﻿using App.Domain.Core.CW18.Users.DTOs;
+﻿using App.Infra.Data.Repos.Ef.CW18.Users;
+using AppDomainCore.CW18.Users.Contract.AppServices;
+using AppDomainCore.CW18.Users.Contract.Repositories;
+using AppDomainCore.CW18.Users.Contract.Services;
+using AppDomainCore.CW18.Users.Entities;
+using AppDomainService.CW18.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +14,18 @@ namespace AppDomainAppService.CW18.Users
 {
     public class UserAppService : IUserAppService
     {
-        public List<UserDto> GetUserd()
+        private readonly IUserService userService;
+        public UserAppService()
         {
-            throw new NotImplementedException();
+            userService = new UserService();
+        }
+        public User Login(string username, string password)
+        {
+            return userService.Login(username, password);
+        }
+        public User Register(User user)
+        {
+            return userService.Register(user);
         }
     }
 }

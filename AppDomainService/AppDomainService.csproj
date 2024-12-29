@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CW18\BaseData\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\App.Infra.Data.Repos.Ef\App.Infra.Data.Repos.Ef.csproj" />
     <ProjectReference Include="..\AppDomainCore\AppDomainCore.csproj" />
   </ItemGroup>

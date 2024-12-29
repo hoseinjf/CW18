@@ -1,15 +1,14 @@
 ﻿using AppDomainCore.CW18.Cards.Entities;
 using AppDomainCore.CW18.Transactions.Entities;
+using AppDomainCore.CW18.Users.Entities;
 using Microsoft.EntityFrameworkCore;
-using Quiz2.Config;
-using Quiz2.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Context
+namespace App.Infra.Data.Repos.Ef.CW18.Db
 {
     public class AppDbContext : DbContext
     {

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Continer
+namespace AppDomainCore.CW18.Cards.Contract.Services
 {
-    public interface ICardRepository
+    public interface ICardService
     {
         public Card GetCardByCardNumber(string cardNumber);
-        public bool ChengPassword(string username,string oldPassword,string newPassword);
+        public bool ChengPassword(string username, string oldPassword, string newPassword);
         public float ShowCardBalans(string cardNumber);
         public float SetTax(float Amount);
         public Card Login(string username, string cardNumber, string password);

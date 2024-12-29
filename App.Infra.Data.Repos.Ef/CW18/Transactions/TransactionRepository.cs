@@ -1,16 +1,14 @@
-﻿using App.Domain.Core.Golestan.Student.Data.Repositories;
+﻿using App.Infra.Data.Repos.Ef.CW18.Db;
+using AppDomainCore.CW18.Transactions.Contract.Repositories;
 using AppDomainCore.CW18.Transactions.Entities;
 using Microsoft.EntityFrameworkCore;
-using Quiz2.Context;
-using Quiz2.Continer;
-using Quiz2.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Repository
+namespace App.Infra.Data.Repos.Ef.CW18.Transactions
 {
     public class TransactionRepository : ITransactionRepository
     {
@@ -60,11 +58,11 @@ namespace Quiz2.Repository
             var ac = appDbContext.Transactions.Where(x => x.SourceCardId == Id
             || x.DestinationCardId == Id)
                 .Select
-                (z=> new Transaction
+                (z => new Transaction
                 {
                     Amount = z.Amount,
                     DestinationCard = z.DestinationCard,
-                    isSuccessful=z.isSuccessful,
+                    isSuccessful = z.isSuccessful,
                     SourceCard = z.SourceCard,
                     TransactionDate = z.TransactionDate
                 }

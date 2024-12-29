@@ -1,7 +1,6 @@
-﻿using App.Domain.Core.Golestan.Student.DTOs;
-using AppDomainCore.CW18.Transactions.Entities;
+﻿using AppDomainCore.CW18.Transactions.Entities;
 
-namespace App.Domain.Core.Golestan.Student.Data.Repositories
+namespace AppDomainCore.CW18.Transactions.Contract.Repositories
 {
     public interface ITransactionRepository
     {

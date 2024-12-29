@@ -1,15 +1,15 @@
-﻿using AppDomainCore.CW18.Cards.Entities;
-using AppDomainCore.CW18.Cards.Services;
-using Quiz2.Continer;
+﻿using App.Infra.Data.Repos.Ef.CW18.Cards;
+using AppDomainCore.CW18.Cards.Contract.Services;
+using AppDomainCore.CW18.Cards.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppDomainAppService.CW18.Cards
+namespace AppDomainService.CW18.Cards
 {
-    public class CardService: ICardService
+    public class CardService :ICardService
     {
         private readonly CardRepository cardRepository;
         public CardService()
@@ -21,7 +21,7 @@ namespace AppDomainAppService.CW18.Cards
         {
             return cardRepository.Add(card);
         }
-        public Card Get(string code)
+        public Card GetCardByCardNumber(string code)
         {
             return cardRepository.GetCardByCardNumber(code);
         }
@@ -40,16 +40,8 @@ namespace AppDomainAppService.CW18.Cards
         public Card Login(string username, string cardNumber, string password)
         {
             var login = cardRepository.Login(username, cardNumber, password);
-            if (login != null)
-            {
-                Console.WriteLine("welcom");
+
                 return login;
-            }
-            else
-            {
-                Console.WriteLine("card number or password is not true");
-                return null;
-            }
         }
         public void SendCode(string cardNumber)
         {
@@ -59,5 +51,6 @@ namespace AppDomainAppService.CW18.Cards
         {
             return cardRepository.CheckCode(input, cardNumber);
         }
+
     }
 }

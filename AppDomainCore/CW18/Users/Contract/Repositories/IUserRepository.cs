@@ -1,7 +1,6 @@
-﻿
-using Quiz2.Entity;
+﻿using AppDomainCore.CW18.Users.Entities;
 
-namespace App.Domain.Core.CW18.Users.Entities
+namespace AppDomainCore.CW18.Users.Contract.Repositories
 
 {
     public interface IUserRepository

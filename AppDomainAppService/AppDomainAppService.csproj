@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CW18\BaseData\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AppDomainCore\AppDomainCore.csproj" />
+    <ProjectReference Include="..\AppDomainService\AppDomainService.csproj" />
   </ItemGroup>
 
 </Project>

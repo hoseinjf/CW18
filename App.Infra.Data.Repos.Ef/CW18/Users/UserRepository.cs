@@ -1,14 +1,13 @@
-﻿using App.Domain.Core.CW18.Users.Entities;
-using Quiz2.Context;
-using Quiz2.Continer;
-using Quiz2.Entity;
+﻿using App.Infra.Data.Repos.Ef.CW18.Db;
+using AppDomainCore.CW18.Users.Contract.Repositories;
+using AppDomainCore.CW18.Users.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quiz2.Repository
+namespace App.Infra.Data.Repos.Ef.CW18.Users
 {
     public class UserRepository : IUserRepository
     {
@@ -20,8 +19,8 @@ namespace Quiz2.Repository
         public User Login(string username, string password)
         {
             var user = appDbContext.Users
-                .FirstOrDefault(x=>x.Username == username && x.Password == password);
-            if (user != null) 
+                .FirstOrDefault(x => x.Username == username && x.Password == password);
+            if (user != null)
             {
                 return user;
             }

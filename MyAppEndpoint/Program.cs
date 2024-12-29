@@ -1,13 +1,19 @@
-﻿
+﻿using App.Infra.Data.Repos.Ef.CW18.OnUsers;
 using AppDomainAppService.CW18.Cards;
 using AppDomainAppService.CW18.Transactions;
 using AppDomainAppService.CW18.Users;
+using AppDomainCore.CW18.Cards.Contract.AppServices;
 using AppDomainCore.CW18.Cards.Entities;
-using Quiz2.Entity;
+using AppDomainCore.CW18.Transactions.Contract.AppServices;
+using AppDomainCore.CW18.Users.Contract.AppServices;
+using AppDomainCore.CW18.Users.Entities;
+using AppDomainService.CW18.Cards;
+using AppDomainService.CW18.Transactions;
+using AppDomainService.CW18.Users;
 
-CardService cardServise = new CardService();
-TransactionService transaction = new TransactionService();
-UserService userServise = new UserService();
+ICardAppService cardServise = new CardAppService();
+ITransactionAppService transaction = new TransactionAppService();
+IUserAppService userServise = new UserAppService();
 bool isRun = true;
 bool isRun2 = true;
 bool isRun3 = true;
@@ -120,7 +126,7 @@ do
                                                         var destinationCard = Console.ReadLine();
                                                         Console.Write("enter Amount: ");
                                                         var Amount = float.Parse(Console.ReadLine());
-                                                        var send = cardServise.Get(destinationCard);
+                                                        var send = cardServise.GetCardByCardNumber(destinationCard);
                                                         Console.WriteLine("The name of the destination account holder: "
                                                                       + send.User.FirstName + " " + send.User.LastName);
                                                         cardServise.SendCode(onCard.CardNumber);

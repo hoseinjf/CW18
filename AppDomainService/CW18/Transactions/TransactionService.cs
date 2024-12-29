@@ -1,23 +1,23 @@
-﻿using App.Domain.Core.Golestan.Student.AppServices;
-using App.Domain.Core.Golestan.Student.Data.Repositories;
-using App.Domain.Core.Golestan.Student.DTOs;
-using AppDomainAppService.CW18.Cards;
+﻿
+using App.Infra.Data.Repos.Ef.CW18.Transactions;
+using AppDomainCore.CW18.Cards.Contract.Services;
+using AppDomainCore.CW18.Transactions.Contract.Repositories;
+using AppDomainCore.CW18.Transactions.Contract.Services;
 using AppDomainCore.CW18.Transactions.Entities;
-using AppDomainCore.CW18.Transactions.Services;
-using Quiz2.Repository;
+using AppDomainService.CW18.Cards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppDomainAppService.CW18.Transactions
+namespace AppDomainService.CW18.Transactions
 {
     public class TransactionService : ITransactionService
     {
 
         private readonly ITransactionRepository _transactionRepository;
-        private readonly CardService cardServise;
+        private readonly ICardService cardServise;
         public TransactionService()
         {
             _transactionRepository = new TransactionRepository();
@@ -25,10 +25,9 @@ namespace AppDomainAppService.CW18.Transactions
         }
         public bool Transfer(string sourceCard, string destinationCard, float transferAmount)
         {
-            var soursCardId = cardServise.Get(sourceCard).Id;
-            //var sCard = cardServise.Get(sourceCard);
-            var destinationCardId = cardServise.Get(destinationCard).Id;
-            var dCard = cardServise.Get(destinationCard);
+            var soursCardId = cardServise.GetCardByCardNumber(sourceCard).Id;
+            var destinationCardId = cardServise.GetCardByCardNumber(destinationCard).Id;
+            var dCard = cardServise.GetCardByCardNumber(destinationCard);
             transferAmount = cardServise.SetTax(transferAmount);
             if (_transactionRepository.Transfer(soursCardId, destinationCardId, transferAmount) == true)
             {
@@ -41,7 +40,7 @@ namespace AppDomainAppService.CW18.Transactions
         }
         public List<Transaction> GetTransactions(string sourceCard)
         {
-            var ac2 = cardServise.Get(sourceCard);
+            var ac2 = cardServise.GetCardByCardNumber(sourceCard);
             var ac = _transactionRepository.GetTransactions(ac2.Id);
 
             foreach (var item in ac)
