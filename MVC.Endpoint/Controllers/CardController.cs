@@ -10,8 +10,8 @@ namespace MVC.Endpoint.Controllers
     public class CardController : Controller
     {
         private readonly ICardAppService _appService = new CardAppService();
-        
-        [HttpGet]       
+
+        [HttpGet]
         public IActionResult index()
         {
             if (Online.user != null)
@@ -81,6 +81,46 @@ namespace MVC.Endpoint.Controllers
             }
             return RedirectToAction("index", "Home");
         }
+
+
+
+
+        [HttpGet]
+        public IActionResult ChengPassword()
+        {
+            if (Online.user != null)
+            {
+                if (Online.card != null)
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("index", "Home");
+        }
+
+
+        [HttpPost]
+        public IActionResult ChengPassword(string oldPass, string newPass)
+        {
+            if (Online.user != null)
+            {
+                if (Online.card != null)
+                {
+                    var pass = _appService.ChengPassword(Online.user.Username, oldPass, newPass);
+                    if (pass == true)
+                    {
+                        return RedirectToAction("index", "Card");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ChengPassword", "Card");
+                    }
+                }
+            }
+            return RedirectToAction("index", "Home");
+        }
+
+
 
 
     }
