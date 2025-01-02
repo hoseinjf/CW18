@@ -14,23 +14,10 @@
                 <img src="image/chip.png" alt="">
                 <p style="color:aliceblue; text-align:center;align-items:center;justify-content:center">نام صاحب حساب</p>
 
-                <p>نام: @ViewData["FirstName"]</p>
-                <p>نام خانوادگی: @ViewData["LastName"]</p>
+                <p>@ViewData["FirstName"]</p>
+                <p>@ViewData["LastName"]</p>
             </div>
             <div class="card-number-box" name="destinationCard" id="destinationCard">@Model.DestinationCard.CardNumber</div>
-            <div class="flexbox">
-                <div class="box">
-                    <span>CCv2</span>
-                    <div class="card-holder-name">***</div>
-                </div>
-                <div class="box">
-                    <span>انقضا</span>
-                    <div class="expiration">
-                        <span class="exp-month">00</span>
-                        <span class="exp-year">00</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

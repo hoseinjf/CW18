@@ -140,7 +140,6 @@ namespace MVC.Endpoint.Controllers
             return RedirectToAction("index", "Home");
         }
 
-
         [HttpGet]
         public IActionResult CardToCard(string destinationCard)
         {
@@ -169,6 +168,7 @@ namespace MVC.Endpoint.Controllers
             }
             return RedirectToAction("index", "Home");
         }
+
 
         [HttpPost]
         public IActionResult CardToCard(string sourceCard, string destinationCard,float Amount,string check)
@@ -205,6 +205,18 @@ namespace MVC.Endpoint.Controllers
             }
             return RedirectToAction("index", "Home");
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
