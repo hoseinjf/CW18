@@ -178,19 +178,13 @@ namespace MVC.Endpoint.Controllers
                 if (Online.card != null)
                 {
                     var send = _appService.GetCardByCardNumber(destinationCard);
-
-
-
-                    if (send != null)
+                    if (send != null && Online.Cont<1)
                     {
                         ViewData["FirstName"] = send.User.FirstName;
                         ViewData["LastName"] = send.User.LastName;
-
+                        Online.Cont=Online.Cont + 1;
                         return RedirectToAction("CardToCard", new { destinationCard = destinationCard });
                     }
-
-
-
                     if (_appService.CheckCode(check, Online.card.CardNumber) == true)
                     {
                         var Transfer = _transactionAppService.Transfer(Online.card.CardNumber, destinationCard, Amount);
