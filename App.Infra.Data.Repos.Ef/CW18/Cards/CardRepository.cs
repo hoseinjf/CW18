@@ -50,8 +50,16 @@ namespace App.Infra.Data.Repos.Ef.CW18.Cards
         public Card GetCardByCardNumber(string cardNumber)
         {
             var card = appDbContext.Cards.FirstOrDefault(x => x.CardNumber == cardNumber);
+            if (card == null)
+            {
+                return null;
+            }
             var user = appDbContext.Users.FirstOrDefault(x => x.Id == card.UserId);
-            card.User = user;
+            if (user != null) 
+            {
+                card.User = user;
+
+            }
             return card;
         }
 

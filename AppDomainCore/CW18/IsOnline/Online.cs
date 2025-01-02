@@ -12,5 +12,6 @@ namespace Quiz2.Entity
     {
         public static User user { get; set; }
         public static Card card { get; set; }
+        public static int Cont { get; set; } = 0;
     }
 }

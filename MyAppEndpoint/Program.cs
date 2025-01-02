@@ -128,7 +128,7 @@ do
                                                         var Amount = float.Parse(Console.ReadLine());
                                                         var send = cardServise.GetCardByCardNumber(destinationCard);
                                                         Console.WriteLine("The name of the destination account holder: "
-                                                                      + send.User.FirstName + " " + send.User.LastName);
++ send.User.FirstName + " " + send.User.LastName);
                                                         cardServise.SendCode(onCard.CardNumber);
                                                         Console.Write("enter Verification code: ");
                                                         var check = Console.ReadLine();

@@ -1,0 +1,63 @@
+﻿@using AppDomainCore.CW18.Transactions.Entities
+@{
+    Layout = "_Card";
+}
+@model Transaction;
+
+
+<div class="container">
+
+    <div class="card-container">
+
+        <div class="front">
+            <div class="image">
+                <img src="image/chip.png" alt="">
+                <p style="color:aliceblue; text-align:center;align-items:center;justify-content:center">نام صاحب حساب</p>
+
+                <p>نام: @ViewData["FirstName"]</p>
+                <p>نام خانوادگی: @ViewData["LastName"]</p>
+            </div>
+            <div class="card-number-box" name="destinationCard" id="destinationCard">@Model.DestinationCard.CardNumber</div>
+            <div class="flexbox">
+                <div class="box">
+                    <span>CCv2</span>
+                    <div class="card-holder-name">***</div>
+                </div>
+                <div class="box">
+                    <span>انقضا</span>
+                    <div class="expiration">
+                        <span class="exp-month">00</span>
+                        <span class="exp-year">00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form asp-action="CardToCard">
+        <div class="inputBox">
+            <span>شماره کارت</span>
+            <input type="text" maxlength="16" name="destinationCard" id="destinationCard" class="card-number-input">
+        </div>
+
+        <div class="inputBox">
+            <input type="text"  name="fnam" id="fnam" class="card-name-input" value="@TempData["FirstName"]">
+        </div>
+
+        <div class="inputBox">
+            <input type="text" name="lnam" id="lnam" class="card-lname-input" value="@TempData["LastName"]">
+        </div>
+
+        <div class="inputBox">
+            <span>وجه انتقال</span>
+            <input type="text" maxlength="16" name="Amount" id="Amount" >
+        </div>
+        <div class="inputBox">
+            <span>رمز اینترنتی</span>
+            <input type="text" maxlength="6" name="check" id="check"  class="card-holder-input">
+        </div>
+        
+        <input type="submit" value="پرداخت" class="submit-btn">
+    </form>
+
+</div>

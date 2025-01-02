@@ -1,0 +1,30 @@
+﻿@using AppDomainCore.CW18.Transactions.Entities
+
+@{
+    Layout = "_layout";
+}
+@model List<Transaction>;
+
+<table style="width:100%;height:100%;margin:50px; text-align:center;align-items:center;justify-content:center" class="table table-bordered table-responsive table-secondary table-hover">
+    <thead>
+        <tr>
+            <th>کارت مبدا </th>
+            <th>کارت مقصد</th>
+            <th>تاریخ عملیات</th>
+            <th>وجه انتقال</th>
+            <th>وضعیت</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SourceCard.CardNumber</td>
+                <td>@item.DestinationCard.CardNumber</td>
+                <td>@item.TransactionDate</td>
+                <td>@item.Amount</td>
+                <td>@item.isSuccessful</td>
+            </tr>
+        }
+    </tbody>
+</table>
