@@ -121,6 +121,24 @@ namespace MVC.Endpoint.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Balans(string cardNumber)
+        {
+            if (Online.user != null)
+            {
+                if (Online.card != null)
+                {
+                    var caed = Online.card;
+                    cardNumber = caed.CardNumber;
+                    var bal = _appService.ShowCardBalans(cardNumber);
+                    caed.Balance = bal;
+                    return View(caed);
+                }
+            }
+            return RedirectToAction("index", "Home");
+        }
+
+
 
 
     }

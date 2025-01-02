@@ -77,7 +77,7 @@ namespace App.Infra.Data.Repos.Ef.CW18.Cards
         public float ShowCardBalans(string cardNumber)
         {
             var card = appDbContext.Cards.FirstOrDefault(x => x.CardNumber == cardNumber);
-            appDbContext.Entry(card).Reload();
+            //appDbContext.Entry(card).Reload();
             if (card != null)
             {
                 return card.Balance;
